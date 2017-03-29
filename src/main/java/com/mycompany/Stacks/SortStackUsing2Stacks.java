@@ -3,7 +3,7 @@ import java.util.*;
 
 
 /**
- * Created by tkmacl9 on 12/21/16.
+ * Created by Abhik Banerjee on 12/21/16.
  */
 public class SortStackUsing2Stacks
 {

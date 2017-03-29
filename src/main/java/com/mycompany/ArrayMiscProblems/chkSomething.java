@@ -8,7 +8,7 @@ import java.util.Arrays;
 
 /**
  *
- * @author abhikbanerjee12
+ * @author Abhik Banerjee
  */
 public class chkSomething {
   

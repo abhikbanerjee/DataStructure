@@ -1,6 +1,11 @@
 
 package com.mycompany.ArrayMiscProblems;
 
+/**
+ *
+ * @author Abhik Banerjee
+ */
+
 public class AtoI
 {
         public static void main(String args[])

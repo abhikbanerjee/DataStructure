@@ -1,7 +1,3 @@
-package com.mycompany.Trees;
-import com.mycompany.Queues.*;
-import java.util.*;
-
 /**
  *
  * @author Abhik Banerjee
@@ -11,6 +7,11 @@ import java.util.*;
  * This also covers the code for Preorder, PostOrder InOrder
  * and Level Order Traversals.
  */
+
+package com.mycompany.Trees;
+
+import com.mycompany.Queues.*;
+import java.util.*;
 
 public class MyTreeImpl {
     public TreeNode root;
@@ -333,6 +334,7 @@ public class MyTreeImpl {
         MyQueueImpl q = new MyQueueImpl();
         ArrayList<ArrayList<String>> levelOrderLists = new ArrayList<ArrayList<String>>();
         int levelnodes = 0;
+        // If root is null return null
         if(root == null)
         {
             return null;

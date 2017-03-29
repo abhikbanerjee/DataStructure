@@ -3,7 +3,7 @@ package com.mycompany.ArrayMiscProblems;
 import java.util.*;
 /**
  *
- * @author abhikbanerjee12
+ * @author Abhik Banerjee
  */
 
 public class FindAnagrams

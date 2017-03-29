@@ -6,7 +6,7 @@ package com.mycompany.ArrayMiscProblems;
 
 /**
  *
- * @author abhikbanerjee12
+ * @author Abhik Banerjee
  */
 public class CheckAnagramRecursive {
   
