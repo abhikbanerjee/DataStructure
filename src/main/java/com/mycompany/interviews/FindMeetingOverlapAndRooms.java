@@ -99,8 +99,38 @@ public class FindMeetingOverlapAndRooms
 
     public static Integer minNumMeetingRooms(List<MeetingTimes> meetings)
     {
-        Integer numMeetingRooms = -1;
+        Integer numMeetingRooms = 0;
+        Integer startTimes[] = new Integer[meetings.size()];
+        Integer endTimes[] = new Integer[meetings.size()];
+        for(int i=0;i<meetings.size();i++)
+        {
+            startTimes[i] = meetings.get(i).getStartTime();
+            endTimes[i] = meetings.get(i).getEndTIme();
+        }
 
+        int i=0;
+        int j=0;
+        int counter = 0;
+        int maxRooms = startTimes[0];
+        while(i<startTimes.length && j<endTimes.length)
+        {
+            if(numMeetingRooms>maxRooms)
+            {
+                maxRooms = numMeetingRooms;
+            }
+            if(startTimes[i]<endTimes[j])
+            {
+                numMeetingRooms++;
+                i++;
+            }
+            else
+            {
+                numMeetingRooms--;
+                j++;
+            }
+        }
+
+        numMeetingRooms = maxRooms;
         return numMeetingRooms;
     }
 }
