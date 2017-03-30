@@ -14,7 +14,7 @@ public class ThreeSumArray
 
             printArray(arr);
             // This method prints the 3 integers which sum to 0;
-            findIntegersSum(arr);
+            boolean sumPresent = findIntegersSum(arr, sum);
 
             // This is another implementation of the method which sums to 0 for any given 3 integers in the array.
             //findIntegersSum2(arr);
@@ -22,10 +22,15 @@ public class ThreeSumArray
             // to make it close to the 2 sum problem we sort the array to traverse the array in O(n) time
             Arrays.sort(arr);
             printArray(arr);
+
+            System.out.println("Is the sum present in the array - "+sumPresent);
+
         }
-        public static void findIntegersSum(Integer[] arr) {
+        public static boolean findIntegersSum(Integer[] arr, Integer sum)
+        {
+            boolean flag = false;
 
-
+            return flag;
         }
 
         public static void printArray(Integer arr[])
