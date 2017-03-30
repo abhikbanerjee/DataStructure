@@ -4,11 +4,7 @@ package com.mycompany.interviews;
  * Created by Abhik Banerjee
  *  on 3/24/17.
  */
-import java.io.*;
 import java.util.*;
-import java.text.*;
-import java.math.*;
-import java.util.regex.*;
 
 public class CheckPangrams {
 

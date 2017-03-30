@@ -47,11 +47,11 @@ public class PlateMatching
         }
     }
 
-    //This method is used to find the smallest word from the dicstionary for a given plate
+    //This method is used to find the smallest word from the dictionary for a given plate
     public static String getSmallestWordForPlate(String plate)
     {
         List<ArrayList<String>> wordLists = new ArrayList<ArrayList<String>>();
-        // This loop goes over each of the chanracters(only characters) in the plate and
+        // This loop goes over each of the characters(only characters) in the plate and
         // fetches all the list of the words for the next step.
         for(int i=0;i<plate.length();i++)
         {
