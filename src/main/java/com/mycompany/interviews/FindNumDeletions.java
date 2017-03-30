@@ -1,13 +1,18 @@
 package com.mycompany.interviews;
 
 /**
- * Created by tkmacl9 on 3/28/17.
+ * Created by Abhik Banerjee
+ * on 3/28/17.
  */
-//1. Minimum number of Deletions in a string - given string and dictionary, find the min number of deletions in the word to make it a valid word
-//        a. Traverse the Dictionary
-//        b. Traverse the Word and do look up in a dictionary
 
-        import java.util.HashSet;
+/*
+    1. Minimum number of Deletions in a string - given string and dictionary, find the min number of deletions in the word to make it a valid word
+      a. Traverse the Dictionary
+      b. Traverse the Word and do look up in a dictionary
+
+*/
+
+import java.util.HashSet;
 
 public class FindNumDeletions
 {
