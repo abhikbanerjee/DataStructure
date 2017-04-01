@@ -22,7 +22,7 @@ public class QuickSortNew {
   public static void quickSort(int low, int high)
   {
     System.out.println("low - "+low+" high - "+high);
-    printArray();
+//    printArray();
     int i = low;
     int j = high;
     int pivot = intArr[low+(high-low)]/2;
@@ -44,8 +44,8 @@ public class QuickSortNew {
       }
     }
     
-    printArray();
-    System.out.println("Pivot Element placed correctly -------- ");
+//    printArray();
+//    System.out.println("Pivot Element placed correctly -------- ");
     //Call recursively
     if(low<j){
     quickSort(low,j);

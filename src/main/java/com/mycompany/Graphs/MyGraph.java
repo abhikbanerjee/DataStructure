@@ -3,7 +3,8 @@ package com.mycompany.Graphs;
 import com.mycompany.Queues.MyQueueImpl;
 
 /**
- * Created by Abhik Banerjee on 12/22/16.
+ * Created by Abhik Banerjee
+ * on 12/22/16.
  */
 public class MyGraph
 {
@@ -17,17 +18,17 @@ public class MyGraph
             /**
             * Call for DFS from node 0;
             */
-            //g.depthFirstSearch(g.nodes[0]);
+            g.depthFirstSearch(g.nodes[0]);
 
             /**
             * Call for BFS from node 0;
             */
-            //g.breadthFirstSearch(g.nodes[0]);
+            g.breadthFirstSearch(g.nodes[0]);
 
             /**
             * Ques 4.1 - Check if the path exists between start and end node
              */
-            //boolean flag = g.pathExistsGraph(g.nodes[0], g.nodes[3]); // returns true
+//            boolean flag = g.pathExistsGraph(g.nodes[0], g.nodes[3]); // returns true
 
             boolean flag = g.pathExistsGraph(g.nodes[1], g.nodes[5]);
         if(flag)
