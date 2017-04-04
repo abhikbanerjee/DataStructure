@@ -81,8 +81,8 @@ public class MyTreeImpl {
       /**
        * Ques 4.3 - Store Level Order numbers in different ArrayLists and Print them later
        */
-        //tree.printListOfLists(tree.LevelOrderTraversalTreeInArrayList(tree.root));
-
+        tree.printListOfLists(tree.LevelOrderTraversalTreeInArrayList(tree.root));
+        System.out.println();
 
       /**
        * Find height of a tree in recursive fashion
@@ -114,7 +114,7 @@ public class MyTreeImpl {
 
       //boolean isBTBST = tree.checkIfBTIsBST(tree.root); // Use the last_printed Integer value to find if a tree is BST
 
-      boolean isBTBST = tree.checkIfBTisBSTMinMaxApproach(tree.root, null, null); // Use the Min and Max approach to find if a tree is a BST
+//      boolean isBTBST = tree.checkIfBTisBSTMinMaxApproach(tree.root, null, null); // Use the Min and Max approach to find if a tree is a BST
 
 //      tree.checkIfBtIsBSTArrayApproach(tree.root, tree.arr1); // Use the Array In Order approach to find if a tree is a BST
 //      boolean flag = true;
@@ -132,14 +132,36 @@ public class MyTreeImpl {
 //      }
 
 
-      if(isBTBST == true)
-      {
-          System.out.println("The Binary Tree is a Binary Search Tree");
-      }
-      else
-      {
-          System.out.println("The Binary Tree is not a Binary Search Tree");
-      }
+//      if(isBTBST == true)
+//      {
+//          System.out.println("The Binary Tree is a Binary Search Tree");
+//      }
+//      else
+//      {
+//          System.out.println("The Binary Tree is not a Binary Search Tree");
+//      }
+
+      /**
+       * Inverting the tree using recursive approach
+       */
+
+            //tree.invertTree(tree.root);
+      /**
+       * Ques 4.3 - Store Level Order numbers in different ArrayLists and Print them later
+       */
+      // tree.printListOfLists(tree.LevelOrderTraversalTreeInArrayList(tree.root));
+
+      /**
+       *  Print all the paths from a tree to the leaf node
+       */
+
+//      ArrayList<TreeNode> prev = new ArrayList<TreeNode>();
+//      tree.printAllPathsOfTree(tree.root, prev);
+
+      // This solution works
+      int path[] = new int[1000];
+      tree.printPathsRecur(tree.root, path,0);
+
 
   }
 
@@ -492,4 +514,87 @@ public class MyTreeImpl {
         index++;
         checkIfBtIsBSTArrayApproach(root.rchild, arr);
     }
+
+    public TreeNode invertTree(TreeNode node)
+    {
+        // Stopping condition of the Recursion
+        if(node==null)
+        {
+            return null;
+        }
+
+        // Swapping the values of left and right children of the tree
+        TreeNode tmp = node.lchild;
+        node.lchild = node.rchild;
+        node.rchild = tmp;
+
+        //Repeat the recursive process for the left child and right child of the tree
+        if(node.lchild!=null)
+        {
+            invertTree(node.lchild);
+        }
+
+        if(node.rchild!=null)
+        {
+            invertTree(node.rchild);
+        }
+
+        return node;
+    }
+
+    public void printAllPathsOfTree(TreeNode node, ArrayList<TreeNode> prev)
+    {
+        if(node == null)
+            return;
+
+        prev.add(node);
+        if(node.lchild==null && node.rchild==null)
+        {
+            // leaf node print the path so far
+            for(TreeNode n: prev)
+            {
+                System.out.print(n.item + " -> ");
+            }
+            System.out.print(node.item);
+            System.out.println();
+        }
+        else {
+            printAllPathsOfTree(node.lchild, prev);
+            printAllPathsOfTree(node.rchild, prev);
+        }
+
+
+    }
+
+    void printPathsRecur(TreeNode node, int path[], int pathLen)
+    {
+        if (node == null)
+            return;
+
+        /* append this node to the path array */
+        path[pathLen] = Integer.parseInt(node.item.toString());
+        pathLen++;
+
+        /* it's a leaf, so print the path that led to here */
+        if (node.lchild == null && node.rchild == null)
+            printArray(path, pathLen);
+        else
+        {
+            /* otherwise try both subtrees */
+            printPathsRecur(node.lchild, path, pathLen);
+            printPathsRecur(node.rchild, path, pathLen);
+        }
+    }
+
+    /* Utility that prints out an array on a line */
+    void printArray(int ints[], int len)
+    {
+        int i;
+        for (i = 0; i < len; i++)
+            System.out.print(ints[i] + " ");
+        System.out.println("");
+    }
+
+
 }
+
