@@ -159,8 +159,13 @@ public class MyTreeImpl {
 //      tree.printAllPathsOfTree(tree.root, prev);
 
       // This solution works
-      int path[] = new int[1000];
-      tree.printPathsRecur(tree.root, path,0);
+//      int path[] = new int[1000];
+//      tree.printPathsRecur(tree.root, path,0);
+
+      /**
+       * Find the Deepest Node in the tree
+       */
+      tree.findDeepestNodeInTree(tree.root);
 
 
   }
@@ -595,7 +600,40 @@ public class MyTreeImpl {
             System.out.print(ints[i] + " ");
         System.out.println("");
     }
+    
+    public void findDeepestNodeInTree(TreeNode node)
+    {
+        if(node==null) {
+            return;
+        }
 
+        TreeNode deepestNode = new TreeNode();
+        MyQueueImpl queueLevel = new MyQueueImpl();
+        queueLevel.enqueue(node);
+
+        while(!queueLevel.isEmpty(queueLevel))
+        {
+            int levelSize = queueLevel.size(queueLevel);
+            while(levelSize>0)
+            {
+                TreeNode tmp = (TreeNode)queueLevel.dequeue();
+                System.out.print( tmp.item.toString() + " ");
+                deepestNode = tmp;
+                if(tmp.lchild!=null)
+                {
+                    queueLevel.enqueue(tmp.lchild);
+                }
+                if(tmp.rchild!=null)
+                {
+                    queueLevel.enqueue(tmp.rchild);
+                }
+                levelSize--;
+            }
+            System.out.println();
+        }
+        System.out.println("The Deepest Node is - "+ deepestNode.item.toString());
+
+    }
 
 }
 
