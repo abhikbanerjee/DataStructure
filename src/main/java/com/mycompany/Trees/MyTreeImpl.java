@@ -572,6 +572,7 @@ public class MyTreeImpl {
             return;
 
         /* append this node to the path array */
+//        System.out.println("Path len is -"+ pathLen);
         path[pathLen] = Integer.parseInt(node.item.toString());
         pathLen++;
 
