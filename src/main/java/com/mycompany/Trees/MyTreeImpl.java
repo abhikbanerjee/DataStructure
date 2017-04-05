@@ -17,8 +17,8 @@ public class MyTreeImpl {
     public TreeNode root;
     public MyQueueImpl queue;
     Integer last_printed = null;
-    int index = 0;
-    int arr1[] = new int[7];
+    public int index = 0;
+    int arr1[] = new int[9];
   
   public MyTreeImpl(){
       queue = new MyQueueImpl();
@@ -165,8 +165,13 @@ public class MyTreeImpl {
       /**
        * Find the Deepest Node in the tree
        */
-      tree.findDeepestNodeInTree(tree.root);
+      //tree.findDeepestNodeInTree(tree.root);
 
+      /**
+       * Find the Kth Largest Element in BST
+       */
+      int k=2;
+      System.out.println("The "+ k+"th element is - "+ tree.findKthElement(tree.root, 2, tree.arr1));
 
   }
 
@@ -600,7 +605,7 @@ public class MyTreeImpl {
             System.out.print(ints[i] + " ");
         System.out.println("");
     }
-    
+
     public void findDeepestNodeInTree(TreeNode node)
     {
         if(node==null) {
@@ -635,5 +640,27 @@ public class MyTreeImpl {
 
     }
 
+    // Find the kth element of the array
+    public Integer findKthElement(TreeNode node, Integer k, int[] arr)
+    {
+        // first get the ArrayList format for the inorder traversal
+        checkIfBtIsBSTArrayApproach(node, arr);
+        if(arr.length < k)
+        {
+            System.out.println("Less than K Elements");
+            return -1;
+        }
+        return arr[arr.length-k];
+    }
+
+    // Find the kth largest element in BST without extra space
+    public Integer findKthElementNoExtraSpace(TreeNode node)
+    {
+        if(node==null);
+        {
+            return index;
+        }
+
+    }
 }
 
