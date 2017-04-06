@@ -176,8 +176,16 @@ public class MyTreeImpl {
       /*
         Print All the paths which add up to the given sum
        */
-      int sum = 15; // try with 17 , 4
-      tree.printPathSums(tree.root, sum);
+//      int sum = 15; // try with 17 , 4
+//      tree.printPathSums(tree.root, sum);
+
+      /**
+       * Find the Least Common Ancestor (LCA), Higesht common ancestor in a Binary Tree
+       */
+      TreeNode p = tree.root.lchild.lchild;
+      TreeNode q = tree.root.lchild.rchild.rchild;
+      TreeNode lca = tree.lowestCommonAdvisor(tree.root, p,q);
+      System.out.println("LCA Node - "+ lca.item.toString());
 
   }
 
@@ -717,6 +725,66 @@ public class MyTreeImpl {
         System.out.println();
     }
 
+    /**
+     *  Find the LCA of 2 given nodes
+     */
+    public boolean covers(TreeNode node, TreeNode p)
+    {
+        if(node==null) {
+            return false;
+        }
+
+        // p and the node are same, means after recursive calls p is a part of the branches of the tree
+        if(node ==p)
+        {
+            return true;
+        }
+
+        // keep searching the left and right subtrees untill we find p or else return false;
+        return covers(node.lchild, p) || covers(node.rchild, p);
+    }
+
+    public TreeNode lowestCommonAdvisorHelper(TreeNode root, TreeNode p, TreeNode q)
+    {
+        // base condition to check if root is null
+        if(root == null)
+        {
+            return null;
+        }
+
+        // if rot
+        if(root==p || root==q)
+        {
+            return root;
+        }
+
+        boolean isPleftChild = covers(root.lchild, p);
+        boolean isQleftChild = covers(root.lchild, q);
+
+        // now we check of both the boolean values are dissimilar then they are on opposite end
+        if(isPleftChild != isQleftChild)
+        {
+            return root;
+        }
+
+        // else both p and q belong to either the left subtree or right subtree , hence
+        // we recurse on that side of the subtree
+        TreeNode childNode = isPleftChild ? root.lchild : root.rchild;
+        return lowestCommonAdvisorHelper(childNode, p, q);
+
+    }
+
+    public TreeNode lowestCommonAdvisor(TreeNode root, TreeNode p, TreeNode q)
+    {
+        // check if p and q are descendants of the root node
+        if(!covers(root,p) || !covers(root,q))
+        {
+            return null;
+        }
+
+        // call the lowest Common Advisor method on the root, p and q nodes
+        return lowestCommonAdvisorHelper(root, p, q);
+    }
 
 }
 
