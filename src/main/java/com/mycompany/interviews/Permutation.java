@@ -15,7 +15,7 @@ public class Permutation {
 
 private static void permutation(String prefix, String str) {
   
-    //System.out.println("prefix and str "+prefix+" : "+str);
+    System.out.println("prefix and str "+prefix+" : "+str);
     int n = str.length();
     if (n == 0) System.out.println("Permutation of the String "+prefix);
     else {
