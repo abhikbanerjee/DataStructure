@@ -170,8 +170,14 @@ public class MyTreeImpl {
       /**
        * Find the Kth Largest Element in BST
        */
-      int k=2;
-      System.out.println("The "+ k+"th element is - "+ tree.findKthElement(tree.root, 2, tree.arr1));
+//      int k=2;
+//      System.out.println("The "+ k+"th element is - "+ tree.findKthElement(tree.root, 2, tree.arr1));
+
+      /*
+        Print All the paths which add up to the given sum
+       */
+      int sum = 15; // try with 17 , 4
+      tree.printPathSums(tree.root, sum);
 
   }
 
@@ -662,5 +668,55 @@ public class MyTreeImpl {
         }
 
     }
+
+    /**
+     * Find the paths having a particular sum - the pahs need not originate from root
+     */
+
+    public void printPathSums(TreeNode node, int Sum)
+    {
+        int depth = findHeightTree(node);
+        Integer[] path = new Integer[depth];
+        printPathsSum(node, path, 0, Sum);
+    }
+
+    public void printPathsSum(TreeNode node, Integer[] path, int pathlength, int Sum)
+    {
+        if(node ==null)
+        {
+            return;
+        }
+
+        path[pathlength] = Integer.parseInt(node.item.toString());
+
+        // Check for any of the intermediate paths add up to the given sum or not
+        int interSum = 0;
+        for(int i=pathlength;i>=0;i--)
+        {
+            interSum += path[i];
+            if(interSum==Sum)
+            {
+                printCurrentPath(path, i, pathlength);
+            }
+        }
+
+        pathlength++;
+
+        // Repeat the other paths fot the left and right subtree of the binary tree
+        printPathsSum(node.lchild, path, pathlength, Sum);
+        printPathsSum(node.rchild, path, pathlength, Sum);
+
+    }
+
+    public void printCurrentPath(Integer[] path, int start, int end)
+    {
+        for(int i= start; i<=end; i++)
+        {
+            System.out.print(path[i] + " ");
+        }
+        System.out.println();
+    }
+
+
 }
 

@@ -70,6 +70,7 @@ public class MyGraph
         {
         for (GraphNode c : root.children) {
             if (c.visited == false) {
+                c.visited = true;
                 depthFirstSearch(c);
                 }
             }
