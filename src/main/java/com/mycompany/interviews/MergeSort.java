@@ -61,11 +61,11 @@ public class MergeSort {
       k++;
       i++;
     }
-    //    while(j<=high){
-    //      arr[k]=helper[j];
-    //      j++;
-    //      k++;
-    //    }
+        while(j<=high){
+          arr[k]=helper[j];
+          j++;
+          k++;
+        }
   }
   
 }
