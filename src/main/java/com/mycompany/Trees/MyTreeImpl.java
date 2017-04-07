@@ -159,7 +159,7 @@ public class MyTreeImpl {
 //      tree.printAllPathsOfTree(tree.root, prev);
 
       // This solution works
-//      int path[] = new int[1000];
+//      int path[] = new int[1000]; // this number can be equal to depth , as thats the max number it can get to
 //      tree.printPathsRecur(tree.root, path,0);
 
       /**
@@ -182,8 +182,14 @@ public class MyTreeImpl {
       /**
        * Find the Least Common Ancestor (LCA), Higesht common ancestor in a Binary Tree
        */
-      TreeNode p = tree.root.lchild.lchild;
-      TreeNode q = tree.root.lchild.rchild.rchild;
+      //check 1
+//      TreeNode p = tree.root.lchild.lchild;  // lchild points to 1
+//      TreeNode q = tree.root.lchild.rchild.rchild; // rchild points to 21
+
+      //check 2
+      TreeNode p = tree.root.lchild; // lchild points to 3
+      TreeNode q = tree.root.lchild.rchild.rchild; // rchild points to 21
+
       TreeNode lca = tree.lowestCommonAdvisor(tree.root, p,q);
       System.out.println("LCA Node - "+ lca.item.toString());
 
@@ -568,24 +574,24 @@ public class MyTreeImpl {
 
     public void printAllPathsOfTree(TreeNode node, ArrayList<TreeNode> prev)
     {
-        if(node == null)
-            return;
-
-        prev.add(node);
-        if(node.lchild==null && node.rchild==null)
-        {
-            // leaf node print the path so far
-            for(TreeNode n: prev)
-            {
-                System.out.print(n.item + " -> ");
-            }
-            System.out.print(node.item);
-            System.out.println();
-        }
-        else {
-            printAllPathsOfTree(node.lchild, prev);
-            printAllPathsOfTree(node.rchild, prev);
-        }
+//        if(node == null)
+//            return;
+//
+//        prev.add(node);
+//        if(node.lchild==null && node.rchild==null)
+//        {
+//            // leaf node print the path so far
+//            for(TreeNode n: prev)
+//            {
+//                System.out.print(n.item + " -> ");
+//            }
+//            System.out.print(node.item);
+//            System.out.println();
+//        }
+//        else {
+//            printAllPathsOfTree(node.lchild, prev);
+//            printAllPathsOfTree(node.rchild, prev);
+//        }
 
 
     }
@@ -752,7 +758,8 @@ public class MyTreeImpl {
             return null;
         }
 
-        // if rot
+        // if root is either p or q that means one of the node being searched for is a descendant of that node
+        // hence that becomes the LCA node
         if(root==p || root==q)
         {
             return root;

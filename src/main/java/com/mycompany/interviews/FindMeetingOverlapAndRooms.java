@@ -86,7 +86,7 @@ public class FindMeetingOverlapAndRooms
     public static boolean findMeetingOverlap(List<MeetingTimes> meetings)
     {
         boolean overlap = false;
-        for(int i=0;i < meetings.size()-2;i++)
+        for(int i=0;i < meetings.size()-1;i++)
         {
             if(meetings.get(i+1).getStartTime() < meetings.get(i).getEndTIme())
             {
@@ -110,7 +110,7 @@ public class FindMeetingOverlapAndRooms
 
         int i=0;
         int j=0;
-        int counter = 0;
+//        int counter = 0;
         int maxRooms = startTimes[0];
         while(i<startTimes.length && j<endTimes.length)
         {
