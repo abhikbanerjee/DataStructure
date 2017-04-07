@@ -9,8 +9,8 @@ public class ContigousSubsequenceLargestSum
     public static void main(String[] args)
     {
         ContigousSubsequenceLargestSum ct = new ContigousSubsequenceLargestSum();
-        int[] arr = new int[] {5, -9, 6, -2, 3};
-        //int[] arr = new int[] {2, 5, -4, 6, -1, 2};
+//        int[] arr = new int[] {5, -9, 6, -2, 3};
+        int[] arr = new int[] {2, 5, -4, 6, -1, 2};
         System.out.println("The Max SubSequence - "+ ct.findMaxSumSubSeq(arr));
     }
 
@@ -35,6 +35,6 @@ public class ContigousSubsequenceLargestSum
 
         }
         // return the sum which is the maximum sum of the sub sequence in the array
-        return sum;
+        return maxsum;
     }
 }
