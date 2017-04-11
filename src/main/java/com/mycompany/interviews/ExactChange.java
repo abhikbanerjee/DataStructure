@@ -18,8 +18,9 @@ public class ExactChange
 
     public int findExactChange(int amount, int[] coins)
     {
-        if(amount==0)
+        if(amount==0) {
             return 0;
+        }
         int min = amount;
         for(int coin : coins)
         {
