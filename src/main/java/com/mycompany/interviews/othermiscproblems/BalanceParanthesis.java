@@ -1,4 +1,4 @@
-package com.mycompany.interviews;
+package com.mycompany.interviews.othermiscproblems;
 
 import java.util.Stack;
 

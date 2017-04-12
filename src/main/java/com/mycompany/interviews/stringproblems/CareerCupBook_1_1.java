@@ -1,4 +1,4 @@
-package com.mycompany.interviews;
+package com.mycompany.interviews.stringproblems;
 
 import java.util.Arrays;
 import java.util.HashSet;

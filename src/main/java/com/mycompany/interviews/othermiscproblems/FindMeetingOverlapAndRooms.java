@@ -1,9 +1,11 @@
-package com.mycompany.interviews;
+package com.mycompany.interviews.othermiscproblems;
 
 /**
  * Created by Abhik Banerjee
  * on 3/29/17.
  */
+
+import com.mycompany.interviews.othermiscproblems.MeetingTimes;
 
 import java.util.List;
 import java.util.ArrayList;

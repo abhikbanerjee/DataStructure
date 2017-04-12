@@ -1,4 +1,4 @@
-package com.mycompany.interviews;
+package com.mycompany.interviews.arrayrelatedproblems;
 
 /**
  * Created by Abhik Banerjee
