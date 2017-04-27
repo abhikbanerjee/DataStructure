@@ -8,18 +8,19 @@ public class Permutation {
 
   public static void main(String args[]) {
     
-    String str = "cat";
-      //String str = "abhik";
+//    String str = "cat";
+      String str = "abhik";
     permutation("", str); 
 }
 
 private static void permutation(String prefix, String str) {
   
-    System.out.println("prefix and str "+prefix+" : "+str);
+//    System.out.println("prefix and str "+prefix+" : "+str);
     int n = str.length();
     if (n == 0) System.out.println("Permutation of the String "+prefix);
     else {
-        for (int i = 0; i < n; i++)
+        for (int i = 0; i < n; i++)https://console.cloud.google.com/dataproc/clusters/ddh-azkaban-ddhprops?project=kohls-ddh-lle&organizationId=1035901152068&tab=overview&duration=PT1H
+
             permutation(prefix + str.charAt(i), str.substring(0, i) + str.substring(i+1, n));
     }
 }
