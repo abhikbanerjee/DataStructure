@@ -1,4 +1,4 @@
-package com.mycompany.interviews.stringproblems;
+package com.mycompany.interviews.recursionproblems;
 
 /**
  *
