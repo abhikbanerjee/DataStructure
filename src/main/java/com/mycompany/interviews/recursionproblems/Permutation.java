@@ -19,7 +19,7 @@ private static void permutation(String prefix, String str) {
     int n = str.length();
     if (n == 0) System.out.println("Permutation of the String "+prefix);
     else {
-        for (int i = 0; i < n; i++)https://console.cloud.google.com/dataproc/clusters/ddh-azkaban-ddhprops?project=kohls-ddh-lle&organizationId=1035901152068&tab=overview&duration=PT1H
+        for (int i = 0; i < n; i++)
 
             permutation(prefix + str.charAt(i), str.substring(0, i) + str.substring(i+1, n));
     }
