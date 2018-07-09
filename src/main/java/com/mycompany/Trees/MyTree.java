@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  *
- * @author abhikbanerjee12
+ * @author abhikbanerjee
  */
 
 public interface MyTree {

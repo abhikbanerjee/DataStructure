@@ -8,7 +8,8 @@ public class ReverseNumber {
   
   public static void main(String args[]){
     
-    int n = 12345;
+//    int n = 12345;
+    int n = 1534236469;
     int reverse = 0;
     while( n != 0 )
       {
@@ -17,7 +18,8 @@ public class ReverseNumber {
           n = n/10;
       }
       System.out.println("Reverse of entered number is "+reverse);
-    
+
+    System.out.println(Integer.MAX_VALUE);
   }
   
 }

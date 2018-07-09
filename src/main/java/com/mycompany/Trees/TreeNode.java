@@ -6,7 +6,7 @@ package com.mycompany.Trees;
 
 /**
  *
- * @author abhikbanerjee12
+ * @author abhikbanerjee
  */
 public class TreeNode<T> {
   public T item;
