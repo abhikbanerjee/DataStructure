@@ -6,14 +6,14 @@ public class EvenOddArrayPartition
 {
     public static void main(String args[])
     {
-        int arr[] = new int[]{2,3,6,7,9,13,15,22,23};
+        int arr[] = new int[]{2,3,6,7,9,13,15,22,23,26,28,32,44,43,41,77};
 
         int nextEven = 0;
         int nextOdd = arr.length -1;
 
         System.out.println("Before Moving Even / Odd elements");
         printArray(arr);
-        while(nextEven< nextOdd)
+        while(nextEven < nextOdd)
         {
             if(arr[nextEven]%2 == 0)
             {
@@ -32,7 +32,7 @@ public class EvenOddArrayPartition
     }
     public static void printArray(int arr[])
         {
-        for(int i: arr)
+        for(int i=0; i <arr.length; i++)
         {
             System.out.print(arr[i] +" ");
         }

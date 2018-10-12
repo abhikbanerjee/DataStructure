@@ -1,12 +1,15 @@
 package com.mycompany.ArrayMiscProblems;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author abhikbanerjee12
  */
 public class SpiralMatrix {
   public static void main(String args[]){
-    int i = 6;
+    int i = 3;
     int j = 4;
     int[][] matr = new int[i][j];
     int count =1;
@@ -63,4 +66,23 @@ public class SpiralMatrix {
       System.out.println();
     }
   }
+
+  public static List<Integer> readSpiralMatrix(int[][] matrix)
+  {
+    if(matrix.length==0)
+      return new ArrayList<Integer>();
+    List<Integer> result = new ArrayList<Integer>();
+
+    int r1 = 0;
+    int r2 = matrix.length -1;
+    int c1 = 0;
+    int c2 = matrix[0].length -1;
+
+    while(r1<=r2 && c1<=c2)
+    {
+
+    }
+      return result;
+  }
+
 }

@@ -20,8 +20,11 @@ public class test1 {
 //      System.out.println(i);
 //    }
 
-      getCommonATGCounts();
+//      getCommonATGCounts();
 
+      StringBuilder s = new StringBuilder();
+      String l = s.append("a").append("dkl").reverse().toString();
+      System.out.println(l);
 
   }
 
